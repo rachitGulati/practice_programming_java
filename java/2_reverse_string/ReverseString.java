@@ -10,12 +10,12 @@ public class ReverseString {
 		char input[] = inputArray[0].toCharArray();
 		char tempCharacter;
 		int length = input.length;
-		//Case in with only one character is present ex: n
+		//Case in which only one character is present ex: n
 		if(length == 1){
 			System.out.println(new String(input));
 			return;
 		}
-		//Case in with only two characters are present ex: go
+		//Case in which only two characters are present ex: go
 		if(length == 2){
 			tempCharacter = input[0];
 			input[0] = input[1];
