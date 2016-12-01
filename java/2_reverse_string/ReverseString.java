@@ -24,7 +24,7 @@ public class ReverseString {
 			return;
 		}
 		/*Complexity O(n/2) ~ O(n)*/
-		for(int i=0; i <= length/2; i++) {
+		for(int i=0; i < length/2; i++) {
 			tempCharacter = input[length - 1 - i];
 			input[length -1 - i] = input[i];
 			input[i] = tempCharacter;
