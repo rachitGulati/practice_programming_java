@@ -1,5 +1,13 @@
 /*
 Reverse the string by replacing the characters on both side of the middle element without extra variable
+1) First store the difference of the two values at the small varibale location.
+2) Subsctract the difference from the large value and it will become the small value
+3) Add the small value in second step with difference at tha same location 
+
+EX: 31 Values
+		 32 difference of two at small value location 3 - 1 = 2
+		 12 Now subtract large by difference 3 - 2 = 1
+		 13 Add difference to new small value 1 + 2 = 3
 */
 public class ReverseString2 {
 	public static void main(String inputArray[]){
