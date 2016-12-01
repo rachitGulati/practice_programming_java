@@ -10,19 +10,19 @@ public class ReverseString {
 		char input[] = inputArray[0].toCharArray();
 		char tempCharacter;
 		int length = input.length;
-//To handle case in with only one characters are present ex: n
-	if(length == 1){
-		System.out.println(new String(input));
-		return;
-	}
-//To handle case in with only two characters are present ex: go
-	if(length == 2){
-		tempCharacter = input[0];
-		input[0] = input[1];
-		input[1] = tempCharacter;
-		System.out.println(new String(input));
-		return;
-	}
+		//Case in with only one character is present ex: n
+		if(length == 1){
+			System.out.println(new String(input));
+			return;
+		}
+		//Case in with only two characters are present ex: go
+		if(length == 2){
+			tempCharacter = input[0];
+			input[0] = input[1];
+			input[1] = tempCharacter;
+			System.out.println(new String(input));
+			return;
+		}
 		/*Complexity O(n/2) ~ O(n)*/
 		for(int i=0; i <= length/2; i++) {
 			tempCharacter = input[length - 1 - i];
