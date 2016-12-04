@@ -5,3 +5,4 @@
 	- [Reverse string with extra variable](java/2_reverse_string/ReverseString.java)
 	- [Reverse string without extra variable](java/2_reverse_string/ReverseString2.java)
 	- [Reverse string Recursively](java/2_reverse_string/ReverseString3.java)
+	- [Find minimum elements after considering all possible transformations](geeksForGeeks/RGBTransformation.java)
