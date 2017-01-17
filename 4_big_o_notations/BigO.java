@@ -113,7 +113,7 @@ class BigO
   //O(n^2) Bubble Sort
   public void bubbleSort() {
     startTime = System.currentTimeMillis();
-    for(int i = arraySize - 1; i > 1; i--) {
+    for(int i = arraySize - 1; i > 0; i--) {
       for(int j = 0; j < i; j++) {
        if(givenArray[j] > givenArray[j+1]) {
          int temp = givenArray[j];
