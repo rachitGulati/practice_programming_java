@@ -1,5 +1,9 @@
 /*
-* Demonstrate the 0(1), O(n), O(logn)
+* Demonstrate the 0(1) Insert in an Array, 
+* O(n) Linear Search in an Array,
+* O(logn) Binary Search in an Array
+* O(nlogn) Quick Sort in an Array
+* O(n^2) Bubble sort in an Array
 */
 class BigO
 {
