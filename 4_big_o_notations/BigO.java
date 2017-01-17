@@ -10,10 +10,10 @@ class BigO
   static long endTime;
   
   public static void main(String[] paramArrayOfString) { 
-    BigO localBigO1 = new BigO(10000);
+    BigO localBigO1 = new BigO(1000);
     localBigO1.generateRandomArray();
     
-    BigO localBigO2 = new BigO(20000);
+    BigO localBigO2 = new BigO(2000);
     localBigO2.generateRandomArray();
 
     BigO localBigO3 = new BigO(300000);
@@ -47,6 +47,21 @@ class BigO
      Bubble Sort Took 958
    */
 
+   startTime = System.currentTimeMillis();
+   localBigO1.quickSort(0, localBigO1.itemsInArray);
+   endTime = System.currentTimeMillis();
+   System.out.println("Quick Sort Took " + (endTime - startTime));
+    
+   startTime = System.currentTimeMillis();
+   localBigO2.quickSort(0, localBigO2.itemsInArray);
+   endTime = System.currentTimeMillis();
+   System.out.println("Quick Sort Took " + (endTime - startTime));
+  
+  /*OUTPUT
+   Quick Sort Took 11
+   Quick Sort Took 26
+  */
+  
    localBigO1.binarySearch(50);
    localBigO2.binarySearch(50);
 
@@ -58,6 +73,8 @@ class BigO
     Time Throught the loop: 8
     Binary Search Took 0
   */
+
+   
   }
   BigO(int paramInt) {
     arraySize = paramInt;
@@ -110,6 +127,43 @@ class BigO
     endTime = System.currentTimeMillis();
     System.out.println("Binary Search Took " + (endTime - startTime));
   }
+
+  //O(nlogn) Quick Sort. It's not efficient algorithm since for large number of elements (100000) it will throw java.lang.StackOverflowError
+
+  public void quickSort(int left, int right){
+   if(right  - left <=0){
+     return;
+   }
+   int pivot = givenArray[right];
+   int pivotLocation  = partitionArray(left, right, pivot);
+   quickSort(left, pivotLocation - 1);
+   quickSort(pivotLocation + 1, right);
+   
+  }
+  
+  public int partitionArray(int left, int right, int pivot) {
+   int leftP = left - 1; //Left Pointer of the array
+   int rightP = right; // Right Pointer of the array
+   while(true) { 
+    while(givenArray[++leftP] < pivot);
+    while(rightP > 0 && givenArray[--rightP] > pivot);
+    
+    if(leftP >= rightP) {
+     break;
+    }
+    else {
+     // Swaping the value;
+     givenArray[leftP] = givenArray[leftP] + givenArray[rightP];
+     givenArray[rightP] = givenArray[leftP]  - givenArray[rightP];
+     givenArray[leftP] = givenArray[leftP] - givenArray[rightP];
+    }
+   }
+   int temp = leftP;
+   leftP = right;
+   right = temp;
+
+   return leftP;
+  }
   //O(n^2) Bubble Sort
   public void bubbleSort() {
     startTime = System.currentTimeMillis();
@@ -135,3 +189,8 @@ class BigO
     itemsInArray = (arraySize - 1);
   }
 }
+
+
+/*
+* I lost this program miskenly due to `rm` command. Then I recovered it from BigO.class file. So please don't mind the indendation and variable names;
+*/
